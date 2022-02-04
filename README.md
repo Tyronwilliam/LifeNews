@@ -35,15 +35,15 @@
 <br>
 <h1>FEATURES</h1>
 <hr>
-  <ul>
-    <li> <p>👉 Node.JS Backend </p></li>
-    <li><p>👉 MySQL Database</p></li>
-    <li><p>👉 Firebase hosting</p></li>
-    <li><p>👉 Heroku Backend hosting</p></li>
-    <li>👉 Redux</li>
-    <li> 👉Authentification Gmail</li>
-   <li> 👉Login</li>
-    <li> 👉API Request MediaStack</li>
-  </ul>
+ <ul>
+    <p dir="auto">👉 Node.JS Backend </p>
+    <p dir="auto">👉 MySQL Database</p>
+    <p dir="auto">👉 Firebase hosting</p>
+    <p dir="auto">👉 Heroku Backend hosting</p>
+    <p dir="auto">👉 Redux</p>
+    <p dir="auto"> 👉Authentification Gmail</p>
+    <p dir="auto">👉Login </p>
+    <p dir="auto">👉API Request MediaStack</p>
+ </ul>
 
 
