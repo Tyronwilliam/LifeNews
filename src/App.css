@@ -1,0 +1,1289 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f5f6f8;
+}
+h1 {
+  font-family: "Roboto", sans-serif;
+}
+p {
+  font-family: "Montserrat", sans-serif;
+}
+header {
+  background-color: #f5f6f8;
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* LOGO */
+.container__title__img {
+  width: 50%;
+  height: 200px;
+  margin: 0px auto 0 auto;
+  padding-top: 30px;
+
+  /* background-color: lightblue; */
+}
+.logo-container {
+  width: 50%;
+  height: 100px;
+  margin: 0px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: blueviolet; */
+}
+.logo {
+  width: 110px;
+  height: 100px;
+}
+/*  */
+/* LOGO TITLE */
+/*  */
+/*  */
+.container__title__img h1 {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 50px;
+  letter-spacing: 15px;
+  color: rgb(0, 0, 0);
+  /* background-color: blueviolet; */
+}
+/*  */
+/*  */
+/* SEARCH DIV  */
+/*  */
+/*  */
+/* Barre de recherche */
+#search {
+  width: 450px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+/*  Composant de la barre de recherhce c'est a dire div forom qui englobel'input */
+.form-header {
+  display: flex;
+}
+/* Input */
+#search-bar {
+  width: 350px;
+  height: 40px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border: 1px solid;
+  padding-left: 10px;
+}
+/* Logo loupe au sein du form */
+.logo-search {
+  width: 25px;
+  height: 25px;
+}
+/* Div qui englobe l'element button dans le form  */
+.container-button {
+  width: 40px;
+  height: 40px;
+}
+/* Style du button pou recherché */
+.button-search {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid;
+  border-left: none;
+  background-color: white;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  cursor: pointer;
+}
+.button-search:active {
+  width: 38px;
+  height: 39px;
+}
+/*  */
+/*  */
+/* OPTION CONNECTE DECONNECTE */
+/*  */
+/*  */
+/* Englobe les option deconnecté et connecté ainsi que le form de recherche */
+.nav {
+  width: 86.9%;
+  height: 50px;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Option déconnecté */
+.nav-false {
+  margin: 25px 50px;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+/* Option connecté */
+.nav-option {
+  margin: 25px 50px;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+/* Animation trait de gauche à droite */
+.nav-false:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+}
+.nav-false:hover:after {
+  width: 100%;
+}
+.nav-option:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+}
+.nav-option:hover:after {
+  width: 100%;
+}
+/*  */
+/*  */
+/* CHOIX DES THEMATIQUE  */
+/*  */
+/*  */
+/* Container de notre barre de navigation  */
+.nav-bar {
+  width: 100%;
+  height: 70px;
+  margin: 50px auto 0px auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  position: sticky;
+  background-color: white;
+}
+.nav-bar-flex {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Option ou la window width est trop petite pour contenir la navigation */
+.burger {
+  display: block;
+  position: relative;
+  margin-top: 30px;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+}
+.container-nav-burger {
+  position: absolute;
+  width: 300px;
+  height: 600px;
+  margin: -90px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.9);
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+.burger-nav {
+  width: 150px;
+  padding: 8px 0px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 20px;
+  border: 0px solid;
+  /* background-color: burlywood; */
+  color: black;
+  overflow: hidden;
+}
+
+.burger input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+}
+.burger span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+.burger span:first-child {
+  transform-origin: 0% 0%;
+}
+
+.burger span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+.burger input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+.burger input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+.burger input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+.container-nav-burger .burger-nav {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.burger input:checked ~ .container-nav-burger {
+  transform: none;
+}
+
+/*  Style par défaut de nos enfants CaD general business etc  */
+.nav_bar_link {
+  position: relative;
+  width: 120px;
+  padding: 8px 0px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 20px;
+  border: 0px solid;
+  /* background-color: burlywood; */
+  color: black;
+  overflow: hidden;
+}
+/* Div qui gère les images à coté des thematique de la navigation */
+.container-logo-theme {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* Logo de navigation */
+.logo-nav-bar {
+  width: 35px;
+  height: 35px;
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* HOME */
+/* ********** */
+/* ********** */
+/* ********** */
+.nav_bar_link.general::after {
+  content: "";
+  background-color: #f6e7cb;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  z-index: -1;
+  transition: all 0.6s;
+  width: 120%;
+  height: 0%;
+}
+.nav_bar_link.general:hover::after {
+  height: 180%;
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* HOME LOGO*/
+/* ********** */
+/* ********** */
+/* ********** */
+.logo-nav-bar.home {
+  width: 30px;
+  height: 20px;
+}
+.home-from-page .circle {
+  background-color: #f6e7cb;
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* BUSINESS */
+/* ********** */
+/* ********** */
+/* ********** */
+.nav_bar_link.business::after {
+  content: "";
+  background-color: rgb(254, 74, 73);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  z-index: -1;
+  transition: all 0.6s;
+  width: 120%;
+  height: 0%;
+}
+.nav_bar_link.business:hover::after {
+  height: 180%;
+}
+.logo-nav-bar.commerce {
+  width: 30px;
+  height: 30px;
+}
+.business-from-page .circle {
+  background-color: rgb(254, 74, 73);
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ENTERTAINEMENT */
+/* ********** */
+/* ********** */
+/* ********** */
+.nav_bar_link.entertainment {
+  width: 150px;
+}
+.container-logo-theme.divert {
+  width: 100%;
+}
+.divertissement {
+  width: 25px;
+  height: 30px;
+}
+.nav_bar_link.entertainment::after {
+  content: "";
+  background-color: rgb(188, 124, 222);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(19deg);
+  z-index: -1;
+  transition: all 0.6s;
+  width: 120%;
+  height: 0%;
+}
+.nav_bar_link.entertainment:hover::after {
+  height: 180%;
+}
+.logo-nav-bar.divert {
+  width: 30px;
+  height: 30px;
+}
+.divert-from-page .circle {
+  background-color: rgb(188, 124, 222);
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* SANTE */
+/* ********** */
+/* ********** */
+/* ********** */
+.nav_bar_link.sante::after {
+  content: "";
+  background-color: rgb(92, 173, 118);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  z-index: -1;
+  transition: all 0.6s;
+  width: 120%;
+  height: 0%;
+}
+.nav_bar_link.sante:hover::after {
+  height: 180%;
+}
+.logo-nav-bar.sante {
+  width: 30px;
+  height: 30px;
+}
+.health-from-page .circle {
+  background-color: rgb(92, 173, 118);
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* SCIENCE  */
+/* ********** */
+/* ********** */
+/* ********** */
+/* Relatif à la barre de selection de catégorie */
+.nav_bar_link.science::after {
+  content: "";
+  background-color: rgb(80, 148, 185);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  z-index: -1;
+  transition: all 0.6s;
+  width: 120%;
+  height: 0%;
+}
+.nav_bar_link.science:hover::after {
+  height: 180%;
+}
+.logo-nav-bar.savoir {
+  width: 35px;
+  height: 35px;
+}
+.science-from-page .circle {
+  background-color: rgb(80, 148, 185);
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* SPORT */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+.nav_bar_link.sport::after {
+  content: "";
+  background-color: rgb(236, 109, 50);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  z-index: -1;
+  transition: all 0.6s;
+  width: 120%;
+  height: 0%;
+}
+.nav_bar_link.sport:hover::after {
+  height: 180%;
+}
+.logo-nav-bar.gym {
+  width: 30px;
+  height: 30px;
+}
+.sport-from-page .circle {
+  background-color: rgb(236, 109, 50);
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* TECHNOLOGIE */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+.nav_bar_link.tech {
+  width: 140px;
+}
+.container-logo-theme.techno {
+  width: 100%x;
+}
+.nav_bar_link.tech::after {
+  content: "";
+  background-color: rgb(156, 159, 171);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  z-index: -1;
+  transition: all 0.6s;
+  width: 120%;
+  height: 0%;
+}
+.nav_bar_link.tech:hover::after {
+  height: 180%;
+}
+.logo-nav-bar.technologie {
+  width: 20px;
+  height: 20px;
+}
+.tech-from-page .circle {
+  background-color: rgb(156, 159, 171);
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* DEFAULT */
+/* ********** */
+/* ********** */
+/* ********** */
+
+/* Style par défaut via le template default pour chaque page  */
+.default-container {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* Englobe le circle et le titre de chaque Card */
+.head-card {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  /* margin: 20px 0 50px 15px; */
+}
+/* Fait reférence à la source de l'article */
+.head-card p {
+  margin-left: 20px;
+  font-size: 22px;
+}
+/* Notre circle qui contient l'image de la thématique */
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+/*  Titre de l'article  */
+.default-container h1 {
+  display: block;
+  width: 100%;
+  height: 100px;
+  padding-right: 30px;
+  line-height: 45px;
+  margin-bottom: 35px;
+  font-size: 1.8em;
+}
+/* Description de l'article */
+.default-container p {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+
+  line-height: 30px;
+}
+/* Div qui englobe l'image dans nos Card  */
+.image {
+  width: 100%;
+  height: 400px;
+}
+/* Style de l'image qui se trouve dans le container image */
+.image img {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+}
+/* Container pour notre catégorie  */
+.cat {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+/* Style de la catégorie */
+.cat li {
+  padding: 10px;
+  background-color: lightgray;
+  color: gray;
+  border-radius: 8px;
+}
+
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/*  PAGE */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* Div qui englobe toute la page */
+.container_from_page {
+  width: 100%;
+  background-color: #f5f6f8;
+  padding: 80px 90px 0px 90px;
+}
+/* Div qui englobe nos Card dans un style flex */
+#container-flex-from-page {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  row-gap: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+/*  Style du circle pour centrer l'image */
+#container-flex-from-page .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*  Style de l'image dans circle */
+.circle img {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-right: 2px;
+}
+/* Div qui englobe notre card et qui lui donne une taille de base */
+#style-card {
+  width: 100%;
+  height: 850px;
+  /* border-radius: 10px; */
+  /* padding-top: 10px; */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0px 20px 20px 20px;
+  box-shadow: 5px lightgray;
+  background-color: white;
+  flex-shrink: 3;
+  flex-basis: 48%;
+}
+/* Button j'aime */
+.buton {
+  width: 100px;
+  padding: 15px 10px;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  text-align: center;
+  color: black;
+  border: 0.5px solid rgb(126, 125, 125);
+  overflow: hidden;
+  cursor: pointer;
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* 
+MY ACCOUNT 
+*/
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+.container_from_account {
+  width: 100%;
+  background-color: #f5f6f8;
+  padding: 80px 90px 0px 90px;
+}
+.container_from_account .titre-account {
+  display: block;
+  margin-bottom: 50px;
+  margin-left: 40px;
+}
+#container-flex-account {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  row-gap: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+#style-account {
+  width: 800px;
+  height: 850px;
+
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* border-radius: 10px; */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0px 20px 20px 20px;
+  box-shadow: 5px lightgray;
+  background-color: white;
+}
+#style-account img {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+}
+#style-account h1 {
+  display: block;
+  height: 100px;
+  line-height: 45px;
+  margin-bottom: 35px;
+}
+#style-account p {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* FORM */
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+
+.container-login {
+  width: 400px;
+  height: 450px;
+  margin: 50px auto 0 auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 20px 20px 20px;
+  border: 1px solid black;
+}
+/* Notre formulaire par défault login register forgot */
+.default-form {
+  width: 384px;
+  height: 350px;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0px 20px 20px 20px;
+}
+.default-form label {
+  font-size: 25px;
+}
+.default-form input {
+  width: 250px;
+  height: 40px;
+}
+.default-form button {
+  width: 250px;
+  height: 40px;
+}
+.link {
+  text-decoration: none;
+  color: rgb(51, 102, 187);
+  margin: 30px auto 0 auto;
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* ********** */
+/* REGISTER PAGE  */
+/* ********** */
+/* ********** */
+/* ********** */
+.container-register {
+  width: 600px;
+  height: 680px;
+
+  margin: 50px auto 0 auto;
+  border-radius: 0px 20px 20px 20px;
+  border: 1px solid black;
+  background-color: white;
+}
+.container-register h1 {
+  text-align: center;
+}
+/*  Changemment du default pour adaptation */
+.form-register {
+  width: 100%;
+  height: 620px;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0px 20px 20px 20px;
+}
+.form-register label {
+  font-size: 25px;
+}
+.form-register input {
+  width: 250px;
+  height: 40px;
+}
+.form-register button {
+  width: 250px;
+  height: 40px;
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* Button pour revenir en haut*/
+/* ********** */
+/* ********** */
+
+.back-to-top {
+  height: 53px;
+  width: 53px;
+  border-radius: 20px;
+
+  position: fixed;
+  z-index: 1;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+
+  background: no-repeat center
+    url(../../front/src/assets/news-default/up-arrrows.png);
+  background-size: 30px;
+  background-position: center;
+}
+/* ********** */
+/* ********** */
+/* ********** */
+/* FOOTER*/
+/* ********** */
+/* ********** */
+.footer-container {
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  border-top: 1px solid;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#icone {
+  height: 100px;
+  display: flex;
+  padding-top: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.social {
+  width: 35%;
+}
+.social img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.media {
+  width: 80%;
+  font-size: 25px;
+}
+.footer-link {
+  text-decoration: none;
+  color: black;
+}
+/* ********** */
+/* ********** */
+/* ERROR*/
+/* ********** */
+/* ********** */
+.err {
+  margin-top: 15px;
+  color: #d8000c;
+}
+.error-login {
+  color: #d8000c;
+}
+/* Tester si tout fonctionne // probleme si l'utilisateur n'a pas validé son email
+réorganiser le css =  A faire
+commenter le code = A faire 
+Faire les mediaQueries (responsive) = A faire 
+ */
+/* ********************************MEDIA QUERIES ********************************** */
+
+@media screen and (max-width: 1820px) {
+  /* Titre par défault dans notre Card */
+  .default-container h1 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 1610px) {
+  /* Titre par défault dans notre Card */
+
+  .default-container h1 {
+    font-size: 1.4em;
+  }
+}
+@media screen and (max-width: 1515px) {
+  /* Titre de notre site */
+  .container__title__img h1 {
+    font-size: 45px;
+  }
+  /* Titre par défault dans notre Card */
+
+  .default-container h1 {
+    font-size: 1.2em;
+  }
+  /* Changement de padding de notre container du main  */
+  .container_from_page {
+    padding: 80px 60px 0px 60px;
+  }
+  /* Changement sur les option connecte deco et le form recherche */
+  .nav {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .form-header {
+    margin-left: 70px;
+  }
+  /* Option connect deconnect */
+  .link-header {
+    margin-right: 40px;
+  }
+}
+@media screen and (max-width: 1365px) {
+  .form-header {
+    width: 330px;
+  }
+  /* Changement de padding de notre container du main  */
+
+  .container_from_page {
+    padding: 80px 40px 0px 40px;
+  }
+}
+@media screen and (max-width: 1308px) {
+  /* Nouveau margin pour Deconnect et reconnect */
+  .nav-option {
+    margin: 25px 20px;
+  }
+  /* Chagement de taille pour notre formulaire de recherche */
+  .form-header {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 1254px) {
+  /* Nouvelle base pour nos Card */
+  #style-card {
+    flex-basis: 80%;
+  }
+}
+@media screen and (max-width: 1185px) {
+  /* Changement de flex pour notre navigation thématique */
+  .nav-bar-flex {
+    width: 100%;
+    height: 500px;
+    position: fixed;
+    flex-direction: column;
+    justify-content: flex-between;
+    align-items: flex-start;
+  }
+  .nav-bar {
+    width: 300px;
+    height: 500px;
+    top: 328px;
+    bottom: 47%;
+    padding-left: 50px;
+    border-radius: 0px 20px 20px 0px;
+    position: fixed;
+    margin: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 0px;
+  }
+  /* Changment de flex pour notre navigation et logo  */
+  .container-logo-theme {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+  }
+  .container-logo-theme p {
+    margin-left: 10px;
+  }
+  /* Nouvelle position flex pour nos card  */
+  #container-flex-from-page {
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: 0;
+  }
+  /* Nouvelle base pour nos Card */
+
+  #style-card {
+    flex-basis: 70%;
+  }
+  /* Footer class media */
+  .media {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1254px) {
+  .container__title__img h1 {
+    font-size: 40px;
+  }
+  .form-header {
+    width: 250px;
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 970px) {
+  /* Nouveau margin pour notre option connect deconnect */
+  .link-header {
+    margin-right: 10px;
+  }
+  /* Changement de notre barre de navigation  */
+  .nav-bar-flex {
+    height: 70px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    position: sticky;
+  }
+  .nav-bar {
+    width: 100%;
+    height: 70px;
+    /* margin: 50px 0 0 0; */
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    position: sticky;
+
+    padding: 0;
+    border-radius: 0;
+  }
+  .nav_bar_link {
+    position: relative;
+    width: 120px;
+    padding: 8px 0px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+    border: 0px solid;
+    /* background-color: burlywood; */
+    color: black;
+    overflow: hidden;
+  }
+
+  /* Changment de width pour notre navigation et logo  */
+
+  .container-logo-theme {
+    width: 100%;
+  }
+  /* Nouvelle size pour notre logo technologie */
+  .logo-nav-bar.technologie {
+    width: 80px;
+    height: 20px;
+  }
+  /* Nouvelle position flex pour nos card  */
+
+  #container-flex-from-page {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0;
+  }
+  #style-card {
+    flex-basis: 80%;
+  }
+  .default-container {
+    height: 900px;
+  }
+  .default-container h1 {
+    height: 50px;
+    margin-bottom: 30px;
+  }
+  .image img {
+    height: 400px;
+  }
+  .container-logo-theme p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .nav-bar {
+    height: 350px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 300px;
+  }
+  .logo {
+    width: 90px;
+    height: 80px;
+  }
+  .container__title__img h1 {
+    font-size: 35px;
+  }
+  .nav_bar_link {
+    width: 120px;
+  }
+  .container-logo-theme {
+    width: 100%;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+  }
+  .container-logo-theme p {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .link-header {
+    height: 50px;
+    margin-right: 30px;
+    margin-top: 0;
+  }
+
+  .nav-option {
+    margin: 20px 0 0 0;
+  }
+  .nav-option:first-of-type {
+    margin-right: 25px;
+  }
+}
+/* @media screen and (max-width: 778px) {
+  .container_from_page {
+    margin-top: 100px;
+  }
+} */
+@media screen and (max-width: 736px) {
+  .link-header {
+    margin-right: 0px;
+  }
+  .nav-option:first-of-type {
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 715px) {
+  .default-container h1 {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 705px) {
+  .link-header {
+    margin: 30px auto 0 auto;
+  }
+  .nav-option:first-of-type {
+    margin-right: 105px;
+  }
+  .nav-bar {
+    padding-left: 260px;
+  }
+  .nav {
+    height: 150px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+  #search {
+    justify-content: center;
+  }
+  .default-container h1 {
+    font-size: 18px;
+  }
+  .form-header {
+    width: 350px;
+  }
+  .err {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 675px) {
+  .nav-bar {
+    padding-left: 270px;
+  }
+  .container-register {
+    width: 450px;
+  }
+  .default-container h1 {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 636px) {
+  .container__title__img {
+    height: 220px;
+  }
+  .nav-bar {
+    padding-left: 250px;
+  }
+
+  .default-container {
+    justify-content: space-between;
+    height: 590px;
+  }
+  .default-container h1 {
+    font-size: 17px;
+  }
+  .default-container p {
+    font-size: 15px;
+  }
+  .image {
+    display: none;
+  }
+  .image img {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .default-container h1 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .nav-bar {
+    padding-left: 220px;
+  }
+  .nav-option:first-of-type {
+    margin-right: 90px;
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 545px) {
+  .default-container h1 {
+    font-size: 15px;
+  }
+
+  .media p {
+    font-size: 15px;
+  }
+  .social {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 376px) {
+  .media p {
+    font-size: 13px;
+  }
+}
