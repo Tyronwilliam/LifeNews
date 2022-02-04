@@ -67,7 +67,6 @@ const Temp = (props) => {
   const sort = (arr) => {
     let newTitlte;
     for (let value of Object.values(arr)) {
-      // console.log(value.title, "my value");
       newTitlte = value.title;
       newArrWithTitle.push(newTitlte);
     }

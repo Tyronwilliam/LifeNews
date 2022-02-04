@@ -9,7 +9,7 @@ const Science = () => {
   let date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
   //requete URL vers Mediastack pour récupérer les articles
-  const url = `http://api.mediastack.com/v1/news?access_key=${api_Key}&categories=science&languages=en,-de&date=${date}`;
+  const url = `https://api.mediastack.com/v1/news?access_key=${api_Key}&categories=science&languages=en,-de&date=${date}`;
   //   const url = `http://api.mediastack.com/v1/news?access_key=${api_Key}&categories=science&languages=fr&countries=fr`;
 
   // Chargement des article au rendu de la page

@@ -39,7 +39,6 @@ const Header = (props) => {
       } else {
         setMax(false);
       }
-      console.log("update width");
     };
     // Appel de la fonction change class lorsque la fenetre change
     window.addEventListener("resize", changeClass);
@@ -83,7 +82,6 @@ const Header = (props) => {
                   id="search-bar"
                   placeholder="Recherche par mot clé"
                   onChange={(e) => {
-                    console.log(e.currentTarget.value);
                     setInputResponse(e.currentTarget.value);
                   }}
                 />

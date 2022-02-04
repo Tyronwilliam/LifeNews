@@ -14,7 +14,7 @@ const Home = () => {
   let date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
   //requete URL vers Mediastack pour récupérer les articles
-  const url = `http://api.mediastack.com/v1/news?access_key=${api_Key}&categories=general&languages=fr&countries=fr&date=${date}`;
+  const url = `https://api.mediastack.com/v1/news?access_key=${api_Key}&categories=general&languages=fr&countries=fr&date=${date}`;
 
   // Chargement des article au rendu de la page
   useEffect(() => {
@@ -25,7 +25,6 @@ const Home = () => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res.data.data, "cest quoi se bordel");
         //On attribue les article à notre variable  article
         setArticle(res.data.data);
         return res.data.data;
@@ -37,7 +36,6 @@ const Home = () => {
 
   return (
     <div className="container_from_page">
-      {/* {console.log(article.length, "je viens du sud")} */}
       {article.length > 0 && (
         <div id="container-flex-from-page" className="home-from-page">
           {article.map((articles, index) => {

@@ -10,7 +10,6 @@ const Forgot = () => {
       email: email,
     };
     forgotPassword(data).then((res) => {
-      console.log(res);
       setErr(res.msg);
     });
     setRedirect(true);

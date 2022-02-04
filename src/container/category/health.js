@@ -9,7 +9,7 @@ const Sante = () => {
   let date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
   //requete URL vers Mediastack pour récupérer les articles
-  const url = `http://api.mediastack.com/v1/news?access_key=${api_Key}&categories=health&languages=en,fr,-de`;
+  const url = `https://api.mediastack.com/v1/news?access_key=${api_Key}&categories=health&languages=en,fr,-de`;
 
   // Chargement des article au rendu de la page
   useEffect(() => {
@@ -30,7 +30,6 @@ const Sante = () => {
   };
   return (
     <div className="container_from_page">
-      {/* {console.log(article.length, "je viens du sud")} */}
       {article.length > 0 && (
         <div id="container-flex-from-page" className="health-from-page">
           {article.map((articles, index) => {

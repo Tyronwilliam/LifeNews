@@ -21,7 +21,6 @@ export const saveArticle = (data) => {
       headers: { "x-access-token": token },
     })
     .then((res) => {
-      console.log(res, "sauvegarde article from article ");
       return res;
     })
     .catch((err) => {
@@ -35,7 +34,6 @@ export const deleteArticle = (id) => {
       headers: { "x-access-token": token },
     })
     .then((res) => {
-      console.log(res, "delete from article");
       return res;
     })
     .catch((err) => {

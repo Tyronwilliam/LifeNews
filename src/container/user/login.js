@@ -16,7 +16,6 @@ const Login = () => {
       password: password,
     };
     loginUser(data).then((res) => {
-      console.log(res);
       if (res.status === 200) {
         window.localStorage.setItem("token", res.token);
         setRedirect(true);

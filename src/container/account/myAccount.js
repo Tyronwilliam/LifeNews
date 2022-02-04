@@ -13,7 +13,6 @@ const Myaccount = (props) => {
   useEffect(() => {
     setTimeout(() => {
       let user_id = props.params.id;
-      console.log("mon id ", props.params.id);
       getAllArticle(user_id).then((res) => {
         setFav(res.result);
       });
@@ -30,7 +29,7 @@ const Myaccount = (props) => {
         }
       })
       .catch((err) => {
-        console.log(err);
+        return err
       });
   };
 

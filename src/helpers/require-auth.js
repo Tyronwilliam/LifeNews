@@ -32,19 +32,17 @@ const RequireAuth = (props) => {
                 setRedirect(true);
               }
             } else {
-              console.log("connecté", response.data);
               props.connectUser(response.data.user[0]);
               getAllArticle(response.data.user[0].id)
                 .then((res) => {
-                  console.log(res.result, "On est ou la");
                   props.loadArticle(res.result);
                 })
                 .catch((err) => {
-                  console.log(err, "Happen?");
+                  return err;
                 });
             }
           })
-          .catch((err) => console.log("Error checktoken", err));
+          .catch((err) => err);
       }
     }
   }, [props]);

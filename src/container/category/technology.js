@@ -16,7 +16,7 @@ const Techno = (props) => {
   let date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
   //requete URL vers Mediastack pour récupérer les articles
-  const url = `http://api.mediastack.com/v1/news?access_key=${api_Key}&categories=technology&languages=en&date=${date}`;
+  const url = `https://api.mediastack.com/v1/news?access_key=${api_Key}&categories=technology&languages=en&date=${date}`;
   // array1.filter(e => array2.includes(e)));
 
   useEffect(() => {
@@ -38,7 +38,6 @@ const Techno = (props) => {
 
   return (
     <div className="container_from_page">
-      {/* {console.log(article.length, "je viens du sud")} */}
       {article.length > 0 && (
         <div id="container-flex-from-page" className="tech-from-page">
           {article.map((articles, index) => {

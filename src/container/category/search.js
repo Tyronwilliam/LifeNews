@@ -11,9 +11,8 @@ const Search = (props) => {
   let today = new Date();
   let date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-  const url = `http://api.mediastack.com/v1/news?access_key=${api_Key}&languages=en,fr,-de&date=${date}&keywords=${parametre}`;
+  const url = `https://api.mediastack.com/v1/news?access_key=${api_Key}&languages=en,fr,-de&date=${date}&keywords=${parametre}`;
   useEffect(() => {
-    console.log(parametre);
     getArticle();
   }, [url]);
   const getArticle = () => {
@@ -21,7 +20,6 @@ const Search = (props) => {
       .get(url)
       .then((res) => {
         //On attribue les article à notre const  article
-        console.log(res, "reponse venant de search");
         setArticle(res.data.data);
         // return res.data.data;
       })
@@ -31,7 +29,6 @@ const Search = (props) => {
   };
   return (
     <div className="container_from_page">
-      {/* {console.log(article.length, "je viens du sud")} */}
       {article.length > 0 && (
         <div id="container-flex-from-page" className="tech-from-page">
           {article.map((articles, index) => {
