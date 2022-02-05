@@ -1,7 +1,7 @@
 import Temp from "./default";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-let api_Key = "90424e42e0434157b9eff5fdaff7026b";
+let api_Key = "2506a69bdd019c0169d9679daf37567e";
 const Science = () => {
   const [article, setArticle] = useState([]);
   // Récupération de la date d'aujourdhui pour avoir les dernieres News
