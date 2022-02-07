@@ -5,7 +5,7 @@ import "../../App";
 
 import { loadArticle } from "../../action/article/articleAction";
 import { connect } from "react-redux";
-let api_Key = "2506a69bdd019c0169d9679daf37567e";
+let api_Key = "b553f2c49acbd2be136f327e016d4390";
 
 const Techno = (props) => {
   let imageDefault = "../../assets/news-default/default_img.jpg";

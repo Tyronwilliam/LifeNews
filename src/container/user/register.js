@@ -27,7 +27,6 @@ const Register = () => {
 
     saveUser(data)
       .then((res) => {
-        console.log("Je viens de register saveUser", res);
         if (res.status === 200) {
           setRedirect(true);
         } else {
